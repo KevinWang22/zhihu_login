@@ -2,7 +2,7 @@
 
 > 最新的知乎模拟登录，包括验证码识别、cookies、js逆向
 >
-> 思路来自：https://github.com/zkqiang/zhihu-login.git，特别是打断点构建参数这一块
+> 思路来自：<https://github.com/zkqiang/zhihu-login.git>，特别是打断点构建参数这一块
 >
 > 虽然已经写了详细的注释了，但是为了避免以后忘了，还是记录一下关键的点
 
@@ -12,7 +12,7 @@
 
 - x-xsrftoken
 
-  一个token认证，如果没有这个参数的话会报错，可以单独get一次登陆页面(https://www.zhihu.com/signin?next=%2F)，get完后在session的cookies中可以找到（请求首页也有这个值，但是不知道为什么请求首页获得的值登录不了）
+  一个token认证，如果没有这个参数的话会报错，可以单独get一次登陆页面(<https://www.zhihu.com/signin?next=%2F>)，get完后在session的cookies中可以找到（请求首页也有这个值，但是不知道为什么请求首页获得的值登录不了）
 
 ![xsrf](images/xsrf.png)
 
@@ -30,8 +30,9 @@
 
 - 以下参数均为固定值
   
+
 通过打断点调试，下面这些参数都是可以直接使用默认值的：
-  
+
 - `clinetId`这个是直接写在js里的，有可能以后就把值改掉了
   
   - `grantType`都是用密码登录，所以直接填上'password'就好了
@@ -53,7 +54,7 @@
 
   验证码，如果不需要验证码则为空字符串，这里用的是英文的验证码，4位数字字母。
 
-  api：https://www.zhihu.com/api/v3/oauth/captcha?lang=en
+  api：<https://www.zhihu.com/api/v3/oauth/captcha?lang=en>
 
   知乎的验证码校验还是比较繁琐的
 
