@@ -14,7 +14,7 @@
 
   一个token认证，如果没有这个参数的话会报错，可以单独get一次登陆页面(https://www.zhihu.com/signin?next=%2F)，get完后在session的cookies中可以找到（请求首页也有这个值，但是不知道为什么请求首页获得的值登录不了）
 
-<img src="images/xsrf.png" alt="xsrf"/>
+<img src="images/xsrf.png" alt="xsrf"/><br>
 
 - x-zse-83
 
@@ -26,10 +26,8 @@
 
 ---
 
-<img src="images/form-data.png" align="left">
-
+<img src="images/form-data.png" align="left"><br>
 - 以下参数均为固定值
-
   通过打断点调试，下面这些参数都是可以直接使用默认值的：
 
   - `clinetId`这个是直接写在js里的，有可能以后就把值改掉了
@@ -79,19 +77,19 @@
 
 加密的入口在这里：
 
-<img src="images/sign_in.png" align="left"/>
+<img src="images/sign_in.png" align="left"/><br>
 
 这里会先对form-data的key做一个处理，从大写字母处切开，用`_`连接，再转换成小写，所以我们其实可以一开始就把key按这种格式写好，然后在调用加密函数前，要把form-data转换成encode的字符串
 
-<img src="images/encode_body.png" align="left"/>
+<img src="images/encode_body.png" align="left"/><br>
 
 后面加密的算法太长了，还有时间限制，根本不是人能做的，所以干脆把整段代码复制出来了，直接调用
 
-<img src="images/encrypt.png" align="left">
+<img src="images/encrypt.png" align="left"/><br>
 
 最后把加密后的body发给服务器就完事了
 
-<img src="images/final_post.png" align="left">
+<img src="images/final_post.png" align="left"/><br>
 
 
 
